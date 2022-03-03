@@ -1,0 +1,46 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>Nuevo Libro</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/books/add" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="isbn" placeholder="ISBN" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="titulo" class="form-control" placeholder="Titulo">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="autor" class="form-control" placeholder="Autor">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="genero" class="form-control" placeholder="Genero">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="paginas" class="form-control" placeholder="Paginas">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Calificación</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="calificacion">
+                                <option selected></option>
+                                <option value="1 estrella">★</option>
+                                <option value="2 estrellas">★★</option>
+                                <option value="3 estrellas">★★★</option>
+                                <option value="4 estrellas">★★★★</option>
+                                <option value="5 estrellas">★★★★★</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-block">Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

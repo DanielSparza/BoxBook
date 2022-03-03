@@ -1,0 +1,52 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3 class="card-title text-uppercase" id="card-title">{{book.titulo}}</h3>
+                    <p class="m-2">Autor: {{book.autor}}</p>
+                    <p class="m-2">Paginas: {{book.paginas}}</p>
+                    <p class="m-2">Calificación: {{book.calificacion}}</p>
+                    <div class="container">
+                        <button class="btn-block" id="division-line"></button>
+                    </div>
+                    <form action="/books/edit/{{id}}" method="post">
+                        <p class="m-2">Avance
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Página actual" aria-label="Página actual"
+                                aria-describedby="button-addon2" name="pagina">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" >Registrar avance</button>
+                            </div>
+                        </div>
+                        </p>
+                   
+                        <p class="m-2">Comentarios
+                        <div class="form-group">
+                            <textarea name="comentario" rows="2" class="form-control"
+                                placeholder="Nuevo comentario"></textarea>
+                            <button class="btn btn-outline-secondary btn-block" >Agregar comentario</button>
+                        </div>
+                        </p>
+                    </form>
+                    
+                    <div class=" comments-section">
+                        {{#each comments}}
+                        <div class="comment d-flex flex-wrap form-group">
+                            <div class="text">
+                                <h5>{{nombre}}</h5>
+                                <p class="comment-text">{{comentario}}</p>
+                                <p>{{timeago fecha}}</p>
+                            </div>
+                        </div>
+                        {{else}}
+                        <div class="container mx-auto">
+                            <p id="empty-message">Aún no hay comentarios.</p>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
